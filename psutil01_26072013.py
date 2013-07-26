@@ -7,8 +7,6 @@ new = input(" what do you wanna know about the system?: ")
 #########################################################
 ## memory ##
 memo = psutil.virtual_memory()
-pyme = psutil.phymem_usage()
-tome = psutil.TOTAL_PHYMEM
 swap = psutil.swap_memory()
 ## systm ##
 user = psutil.get_users()
@@ -17,10 +15,8 @@ syst = psutil.get_pid_list()
 sysl = psutil.get_process_list()
 ## cpu ##
 cpus = psutil.NUM_CPUS
-cpuf = psutil.cpu_percent()
 cpuc = psutil.cpu_percent(interval=1, percpu=True)
-cpuv = psutil.cpu_times(percpu=False)
-cpul = psutil.cpu_times_percent(interval=1, percpu=False)
+cpuv = psutil.cpu_times(percpu=True)
 ## network ##
 netw = psutil.network_io_counters()
 nets = psutil.network_io_counters(pernic=True)
@@ -32,15 +28,24 @@ dskd = psutil.disk_usage('/')
 #########################################################
 
 inf = """you can get infos about your system,
-just by give in memory, system, cpu, disk or network"""
+just by give in mem, system, cpu, disk or network"""
 
-print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
+quest = """cpu c - show's cpu load in %,\ncpu s - show's number of cpu's,
+cpu v - show's cpu load"""
+
+hint = """mem a - show's memory info,\nmem s - show's swap info"""
+
+print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
 
 if "cpu" in new:
   if "cpu c" in new:
-    print(cpuc,"\n")
+    print("system run's at",cpuc,"%\n")
   elif "cpu s" in new:
-    print(cpus,"\n")
+    print("your system has", cpus,"cpu's\n")
+  elif "cpu v" in new:
+    print(cpuv,"\n")
+  else:
+    print("cpu has more options, type -- quest --")
 #########################    
 elif "disk" in new:
   if "disk d" in new:
@@ -49,12 +54,21 @@ elif "disk" in new:
 elif "system" in new:
   print(user,"\n")
 #########################
-elif "memory" in new:
-  print(tome,"\n")
+elif "mem" in new:
+  if "mem a" in new:
+    print(memo,"\n")
+  elif "mem s" in new:
+    print(swap,"\n")
+  else:
+    print("mem has more options, type -- hint --")
 #########################
 elif "network" in new:
   print(nets,"\n")
-#########################  
+#########################
+elif "hint" in new:
+  print(hint,"\n")
+elif "quest" in new:
+  print(quest,"\n")
 elif "info" in new:
   print(inf,"\n")
 elif "ver" in new:
