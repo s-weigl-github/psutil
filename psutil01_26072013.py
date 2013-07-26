@@ -1,6 +1,6 @@
 import psutil
 
-__version__ = 'ver. 0.1 - alpha'
+__version__ = 'ver. 0.1 - beta'
 
 print("-- for help type -- info --")
 new = input(" what do you wanna know about the system?: ")
@@ -38,6 +38,10 @@ quest = """cpu c - show's cpu load in %,\ncpu s - show's number of cpu's,
 cpu v - show's cpu load"""
 
 hint = """mem a - show's memory info,\nmem s - show's swap info"""
+
+faq = """disk c - show's C: info,\ndisk d - show's D: info,
+disk e - show's E: info,\ndisk g - show's G: info,
+disk k - show's K: info"""
 
 print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
 
