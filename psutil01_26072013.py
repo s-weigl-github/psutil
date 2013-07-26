@@ -43,6 +43,10 @@ faq = """disk c - show's C: info,\ndisk d - show's D: info,
 disk e - show's E: info,\ndisk g - show's G: info,
 disk k - show's K: info"""
 
+helf = """network s - show some stats,\nnetwork w - show some stats"""
+
+sol = """system u - show user info,\nsystem b - show boot time"""
+
 print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
 
 if "cpu" in new:
@@ -70,7 +74,12 @@ elif "disk" in new:
     print("disk has more options, type -- faq --")
 #########################   
 elif "system" in new:
-  print(user,"\n")
+  if "system u" in new:
+    print(user,"\n")
+  elif "system b" in new:
+    print(boot,"\n")
+  else:
+    print("system has more options, type -- sol --")
 #########################
 elif "mem" in new:
   if "mem a" in new:
@@ -81,8 +90,17 @@ elif "mem" in new:
     print("mem has more options, type -- hint --")
 #########################
 elif "network" in new:
-  print(nets,"\n")
+  if "network s" in new:
+    print(nets,"\n")
+  elif "network w" in new:
+    print(netw,"\n")
+  else:
+    print("network has more options, type -- helf --")
 #########################
+elif "sol" in new:
+  print(sol,"\n")
+elif "helf" in new:
+  print(helf,"\n")
 elif "faq" in new:
   print(faq,"\n")
 elif "hint" in new:
