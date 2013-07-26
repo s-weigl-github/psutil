@@ -23,8 +23,12 @@ nets = psutil.network_io_counters(pernic=True)
 ## disk ##
 dska = psutil.disk_partitions(all=False)
 dskb = psutil.disk_io_counters(perdisk=False)
-dskc = psutil.disk_io_counters(perdisk=True)
-dskd = psutil.disk_usage('/')
+dskm = psutil.disk_io_counters(perdisk=True)
+dskc = psutil.disk_usage("C:")
+dskd = psutil.disk_usage("D:")
+dske = psutil.disk_usage("E:")
+dskg = psutil.disk_usage("G:")
+dskk = psutil.disk_usage("K:")
 #########################################################
 
 inf = """you can get infos about your system,
@@ -48,8 +52,18 @@ if "cpu" in new:
     print("cpu has more options, type -- quest --")
 #########################    
 elif "disk" in new:
-  if "disk d" in new:
+  if "disk c" in new:
+    print(dskc,"\n")
+  elif "disk d" in new:
     print(dskd,"\n")
+  elif "disk e" in new:
+    print(dske,"\n")
+  elif "disk g" in new:
+    print(dskg,"\n")
+  elif "disk k" in new:
+    print(dskk,"\n")
+  else:
+    print("disk has more options, type -- faq --")
 #########################   
 elif "system" in new:
   print(user,"\n")
@@ -65,6 +79,8 @@ elif "mem" in new:
 elif "network" in new:
   print(nets,"\n")
 #########################
+elif "faq" in new:
+  print(faq,"\n")
 elif "hint" in new:
   print(hint,"\n")
 elif "quest" in new:
