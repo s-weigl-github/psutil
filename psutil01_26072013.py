@@ -32,20 +32,29 @@ dskd = psutil.disk_usage('/')
 #########################################################
 
 inf = """you can get infos about your system,
-just by give in memory, systm, cpu, disk or network"""
+just by give in memory, system, cpu, disk or network"""
 
 print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
 
 if "cpu" in new:
-  print(cpuc,"\n")
+  if "cpu c" in new:
+    print(cpuc,"\n")
+  elif "cpu s" in new:
+    print(cpus,"\n")
+#########################    
 elif "disk" in new:
-  print(dskd,"\n")
-elif "systm" in new:
+  if "disk d" in new:
+    print(dskd,"\n")
+#########################   
+elif "system" in new:
   print(user,"\n")
+#########################
 elif "memory" in new:
   print(tome,"\n")
+#########################
 elif "network" in new:
   print(nets,"\n")
+#########################  
 elif "info" in new:
   print(inf,"\n")
 elif "ver" in new:
