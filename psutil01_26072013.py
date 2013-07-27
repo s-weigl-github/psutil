@@ -4,7 +4,7 @@
 ##########################################################
 import psutil
 
-__version__ = 'ver. 0.3 - beta'
+__version__ = 'ver. 0.5 - beta'
 
 print("-- for help type -- info --")
 new = input(" what do you wanna know about the system?: ")
@@ -45,15 +45,15 @@ disk k - show's K: info"""
 helf = """network s - show some stats,\nnetwork w - show some stats"""
 sol = """system u - show user info,\nsystem b - show boot time"""
 print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
-if "cpu" in new:
-  if "cpu c" in new:
+if "cpus" in new:
+  if "cpus c" in new:
     print("system run's at",cpuc,"%\n")
-  elif "cpu s" in new:
+  elif "cpus s" in new:
     print("your system has", cpus,"cpu's\n")
-  elif "cpu v" in new:
+  elif "cpus v" in new:
     print(cpuv,"\n")
   else:
-    print("cpu has more options, type -- help cpu --")
+    print("cpus has more options, type -- help cpu --")
 elif "disk" in new:
   if "disk c" in new:
     print(dskc,"\n")
@@ -66,33 +66,33 @@ elif "disk" in new:
   elif "disk k" in new:
     print(dskk,"\n")
   else:
-    print("disk has more options, type -- help disk --")
+    print("disk has more options, type -- help hdd --")
 elif "system" in new:
   if "system u" in new:
     print(user,"\n")
   elif "system b" in new:
     print(boot,"\n")
   else:
-    print("system has more options, type -- help system --")
-elif "mem" in new:
-  if "mem a" in new:
+    print("system has more options, type -- help sys --")
+elif "memory" in new:
+  if "memory a" in new:
     print(memo,"\n")
-  elif "mem s" in new:
+  elif "memory s" in new:
     print(swap,"\n")
   else:
-    print("mem has more options, type -- help mem --")
+    print("memory has more options, type -- help mem --")
 elif "network" in new:
   if "network s" in new:
     print(nets,"\n")
   elif "network w" in new:
     print(netw,"\n")
   else:
-    print("network has more options, type -- help network --")
-elif "help system" in new:
+    print("network has more options, type -- help net --")
+elif "help sys" in new:
   print(sol,"\n")
-elif "help network" in new:
+elif "help net" in new:
   print(helf,"\n")
-elif "help disk" in new:
+elif "help hdd" in new:
   print(faq,"\n")
 elif "help mem" in new:
   print(hint,"\n")
