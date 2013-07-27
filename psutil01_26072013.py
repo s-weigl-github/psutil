@@ -4,7 +4,7 @@
 ##########################################################
 import psutil
 
-__version__ = 'ver. 0.7 - beta'
+__version__ = 'ver. 0.8 - beta'
 
 print("-- for help type -- info --")
 new = input(" what do you wanna know about the system?: ")
@@ -43,7 +43,8 @@ faq = """disk c - show's C: info,\ndisk d - show's D: info,
 disk e - show's E: info,\ndisk g - show's G: info,
 disk k - show's K: info"""
 helf = """network s - show some stats,\nnetwork w - show some stats"""
-sol = """system u - show user info,\nsystem b - show boot time"""
+sol = """system u - show user info,\nsystem b - show boot time
+system d - list pid,\nsystem p - list process"""
 print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
 if "cpu" in new:
   if "cpu c" in new:
@@ -72,6 +73,10 @@ elif "system" in new:
     print(user,"\n")
   elif "system b" in new:
     print(boot,"\n")
+  elif "system d" in new:
+    print(syst,"\n")
+  elif "system p" in new:
+    print(sysl,"\n")
   else:
     print("system has more options, type -- help sys --")
 elif "memory" in new:
@@ -103,7 +108,7 @@ elif "info" in new:
 elif "version" in new:
   print(__version__, "\n")
 elif "autor" in new:
-  print("idear and codings are from\nSebastian Weigl at 26.July.2013\n")
+  print("idear and codings are from\nSebastian Weigl,Berlin Germany at 26.July.2013\n")
 else:
   print("!!! Fail! value not on list !!!")
   print("  !!! Please change value !!!\n")
