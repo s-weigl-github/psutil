@@ -4,7 +4,7 @@
 ##########################################################
 import psutil
 
-__version__ = 'ver. 0.5 - beta'
+__version__ = 'ver. 0.7 - beta'
 
 print("-- for help type -- info --")
 new = input(" what do you wanna know about the system?: ")
@@ -45,15 +45,15 @@ disk k - show's K: info"""
 helf = """network s - show some stats,\nnetwork w - show some stats"""
 sol = """system u - show user info,\nsystem b - show boot time"""
 print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
-if "cpus" in new:
-  if "cpus c" in new:
+if "cpu" in new:
+  if "cpu c" in new:
     print("system run's at",cpuc,"%\n")
-  elif "cpus s" in new:
+  elif "cpu s" in new:
     print("your system has", cpus,"cpu's\n")
-  elif "cpus v" in new:
+  elif "cpu v" in new:
     print(cpuv,"\n")
   else:
-    print("cpus has more options, type -- help cpu --")
+    print("cpu has more options, type -- help processor --")
 elif "disk" in new:
   if "disk c" in new:
     print(dskc,"\n")
@@ -96,11 +96,11 @@ elif "help hdd" in new:
   print(faq,"\n")
 elif "help mem" in new:
   print(hint,"\n")
-elif "help cpu" in new:
+elif "help processor" in new:
   print(quest,"\n")
-elif "info" or "help" in new:
+elif "info" in new:
   print(inf,"\n")
-elif "ver" or "version" in new:
+elif "version" in new:
   print(__version__, "\n")
 elif "autor" in new:
   print("idear and codings are from\nSebastian Weigl at 26.July.2013\n")
