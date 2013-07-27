@@ -1,10 +1,14 @@
+##########################################################
+## this programm reads and prints system varibles using ##
+##      -- psutil from Giampaolo Rodola' --             ##
+##########################################################
 import psutil
 
-__version__ = 'ver. 0.1 - beta'
+__version__ = 'ver. 0.3 - beta'
 
 print("-- for help type -- info --")
 new = input(" what do you wanna know about the system?: ")
-#########################################################
+##############################################################################
 ## memory ##
 memo = psutil.virtual_memory()
 swap = psutil.swap_memory()
@@ -29,26 +33,18 @@ dskd = psutil.disk_usage("D:")
 dske = psutil.disk_usage("E:")
 dskg = psutil.disk_usage("G:")
 dskk = psutil.disk_usage("K:")
-#########################################################
-
+##############################################################################
 inf = """you can get infos about your system,
 just by give in mem, system, cpu, disk or network"""
-
 quest = """cpu c - show's cpu load in %,\ncpu s - show's number of cpu's,
 cpu v - show's cpu load"""
-
 hint = """mem a - show's memory info,\nmem s - show's swap info"""
-
 faq = """disk c - show's C: info,\ndisk d - show's D: info,
 disk e - show's E: info,\ndisk g - show's G: info,
 disk k - show's K: info"""
-
 helf = """network s - show some stats,\nnetwork w - show some stats"""
-
 sol = """system u - show user info,\nsystem b - show boot time"""
-
 print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
-
 if "cpu" in new:
   if "cpu c" in new:
     print("system run's at",cpuc,"%\n")
@@ -57,8 +53,7 @@ if "cpu" in new:
   elif "cpu v" in new:
     print(cpuv,"\n")
   else:
-    print("cpu has more options, type -- quest --")
-#########################    
+    print("cpu has more options, type -- help cpu --")
 elif "disk" in new:
   if "disk c" in new:
     print(dskc,"\n")
@@ -71,43 +66,39 @@ elif "disk" in new:
   elif "disk k" in new:
     print(dskk,"\n")
   else:
-    print("disk has more options, type -- faq --")
-#########################   
+    print("disk has more options, type -- help disk --")
 elif "system" in new:
   if "system u" in new:
     print(user,"\n")
   elif "system b" in new:
     print(boot,"\n")
   else:
-    print("system has more options, type -- sol --")
-#########################
+    print("system has more options, type -- help system --")
 elif "mem" in new:
   if "mem a" in new:
     print(memo,"\n")
   elif "mem s" in new:
     print(swap,"\n")
   else:
-    print("mem has more options, type -- hint --")
-#########################
+    print("mem has more options, type -- help mem --")
 elif "network" in new:
   if "network s" in new:
     print(nets,"\n")
   elif "network w" in new:
     print(netw,"\n")
   else:
-    print("network has more options, type -- helf --")
-#########################
-elif "sol" in new:
+    print("network has more options, type -- help network --")
+elif "help system" in new:
   print(sol,"\n")
-elif "helf" in new:
+elif "help network" in new:
   print(helf,"\n")
-elif "faq" in new:
+elif "help disk" in new:
   print(faq,"\n")
-elif "hint" in new:
+elif "help mem" in new:
   print(hint,"\n")
-elif "quest" in new:
+elif "help cpu" in new:
   print(quest,"\n")
-elif "info" in new:
+elif "info" or "help" in new:
   print(inf,"\n")
 elif "ver" or "version" in new:
   print(__version__, "\n")
