@@ -109,7 +109,7 @@ elif "quest" in new:
   print(quest,"\n")
 elif "info" in new:
   print(inf,"\n")
-elif "ver" in new:
+elif "ver" or "version" in new:
   print(__version__, "\n")
 elif "autor" in new:
   print("idear and codings are from\nSebastian Weigl at 26.July.2013\n")
