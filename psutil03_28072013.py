@@ -1,6 +1,6 @@
 import psutil
 
-__version__ = 'ver. 1.1 - beta'
+__version__ = 'ver. 1.3 - beta'
 __date__ = 2013, 7, 28
 
 #####################################################
@@ -14,6 +14,11 @@ memw = psutil.swap_memory()
 ## disk ##
 dskc = psutil.disk_usage("C:")
 dskd = psutil.disk_usage("D:")
+## systm ##
+sysz = psutil.get_users()
+sysy = psutil.get_boot_time()
+sysr = psutil.get_pid_list()
+sysh = psutil.get_process_list()
 #####################################################
 def print_options():
   print("Options:")
@@ -28,8 +33,10 @@ def print_options():
   print("    'c' info C: drive")
   print("    'd' info D: drive")
   print("  SYS info's:")
-  print("    'xx' xxx")
-  print("    'xx' xxx")
+  print("    'z' get user info")
+  print("    'y' boot time info")
+  print("    'r' PID list info")
+  print("    'h' Process list")
   print("  NET info's:")
   print("    'xx' xxx")
   print("    'xx' xxx")
@@ -49,6 +56,14 @@ def output_hdd_c(dskc):
   return psutil.disk_usage("C:")
 def output_hdd_d(dskd):
   return psutil.disk_usage("D:")
+def output_sys_z(sysz):
+  return psutil.get_users()
+def output_sys_y(sysy):
+  return psutil.get_boot_time()
+def output_sys_r(sysr):
+  return psutil.get_pid_list()
+def output_sys_h(sysh):
+  return psutil.get_process_list()
 #####################################################
 choice = "x"
 while choice != "q":
@@ -72,6 +87,18 @@ while choice != "q":
     choice = input("option: ")
   elif choice == "d":
     print(output_hdd_d(dskd))
+    choice = input("option: ")
+  elif choice == "z":
+    print(output_sys_z(sysz))
+    choice = input("option: ")
+  elif choice == "y":
+    print(output_sys_y(sysy))
+    choice = input("option: ")
+  elif choice == "r":
+    print(output_sys_r(sysr))
+    choice = input("option: ")
+  elif choice == "h":
+    print(output_sys_h(sysh))
     choice = input("option: ")
   elif choice == "x":
     print_options()
