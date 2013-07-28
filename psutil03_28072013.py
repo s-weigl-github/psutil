@@ -1,7 +1,7 @@
 import psutil
 
-__version__ = 'ver. 1.3 - beta'
-__date__ = 2013, 7, 28
+__version__ = 'ver. 1.5 - beta'
+__date__ = 2013, 7, 29
 
 #####################################################
 ## cpu ##
@@ -19,6 +19,9 @@ sysz = psutil.get_users()
 sysy = psutil.get_boot_time()
 sysr = psutil.get_pid_list()
 sysh = psutil.get_process_list()
+## network ##
+netn = psutil.network_io_counters()
+netm = psutil.network_io_counters(pernic=True)
 #####################################################
 def print_options():
   print("Options:")
@@ -38,8 +41,8 @@ def print_options():
   print("    'r' PID list info")
   print("    'h' Process list")
   print("  NET info's:")
-  print("    'xx' xxx")
-  print("    'xx' xxx")
+  print("    'n' network io info")
+  print("    'm' network io info")
   print("  'q' quit")
 #####################################################
 def output_processor_s(cpus):
@@ -64,6 +67,10 @@ def output_sys_r(sysr):
   return psutil.get_pid_list()
 def output_sys_h(sysh):
   return psutil.get_process_list()
+def output_net_n(netn):
+  return psutil.network_io_counters()
+def output_net_m(netm):
+  return psutil.network_io_counters(pernic=True)
 #####################################################
 choice = "x"
 while choice != "q":
@@ -100,9 +107,13 @@ while choice != "q":
   elif choice == "h":
     print(output_sys_h(sysh))
     choice = input("option: ")
+  elif choice == "n":
+    print(output_net_n(netn))
+    choice = input("option: ")
+  elif choice == "m":
+    print(output_net_m(netm))
+    choice = input("option: ")
   elif choice == "x":
     print_options()
     choice = input("option: ")
-
-
-
+##-EOF-##
