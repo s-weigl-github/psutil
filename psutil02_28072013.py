@@ -4,7 +4,7 @@
 ##########################################################
 import psutil
 
-__version__ = 'ver. 0.8 - beta'
+__version__ = 'ver. 1.0 - beta'
 __date__ = 2013, 7, 28
 
 print("-- for help type -- info --")
@@ -47,70 +47,13 @@ helf = """network s - show some stats,\nnetwork w - show some stats"""
 sol = """system u - show user info,\nsystem b - show boot time
 system d - list pid,\nsystem p - list process"""
 print("\n-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --\n")
-if "cpu" in new:
-  if "cpu c" in new:
-    print("system run's at",cpuc,"%\n")
-  elif "cpu s" in new:
-    print("your system has", cpus,"cpu's\n")
-  elif "cpu v" in new:
-    print(cpuv,"\n")
-  else:
-    print("cpu has more options, type -- help processor --")
-elif "disk" in new:
-  if "disk c" in new:
-    print(dskc,"\n")
-  elif "disk d" in new:
-    print(dskd,"\n")
-  elif "disk e" in new:
-    print(dske,"\n")
-  elif "disk g" in new:
-    print(dskg,"\n")
-  elif "disk k" in new:
-    print(dskk,"\n")
-  else:
-    print("disk has more options, type -- help hdd --")
-elif "system" in new:
-  if "system u" in new:
-    print(user,"\n")
-  elif "system b" in new:
-    print(boot,"\n")
-  elif "system d" in new:
-    print(syst,"\n")
-  elif "system p" in new:
-    print(sysl,"\n")
-  else:
-    print("system has more options, type -- help sys --")
-elif "memory" in new:
-  if "memory a" in new:
-    print(memo,"\n")
-  elif "memory s" in new:
-    print(swap,"\n")
-  else:
-    print("memory has more options, type -- help mem --")
-elif "network" in new:
-  if "network s" in new:
-    print(nets,"\n")
-  elif "network w" in new:
-    print(netw,"\n")
-  else:
-    print("network has more options, type -- help net --")
-elif "help sys" in new:
-  print(sol,"\n")
-elif "help net" in new:
-  print(helf,"\n")
-elif "help hdd" in new:
-  print(faq,"\n")
-elif "help mem" in new:
-  print(hint,"\n")
-elif "help processor" in new:
-  print(quest,"\n")
-elif "info" in new:
-  print(inf,"\n")
-elif "version" in new:
-  print(__version__, "\n")
-elif "autor" in new:
-  print("idear and codings are from\nSebastian Weigl,Berlin Germany at", __date__,"\n")
-else:
-  print("!!! Fail! value not on list !!!")
-  print("  !!! Please change value !!!\n")
-## __EOF__
+def Processor(self):
+  if "cpu" in new:
+    if "cpu c" in new:
+      print("system run's at", cpuc, "%\n")
+    elif "cpu s" in new:
+      print("your system has", cpus, "cpu's\n")
+    else:
+      print("noch leer")
+      
+      
