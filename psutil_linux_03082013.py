@@ -119,4 +119,13 @@ while choice != "q":
   elif choice == "x":
     print_options()
     choice = input("option: ")
+##  elif :
+##      print(inf,"\n")
+##    elif "version" in new:
+##  print(__version__, "\n")
+##elif "autor" in new:
+##  print("idear and codings are from\nSebastian Weigl,Berlin Germany at", __date__,"\n")
+##else:
+##  print("!!! Fail! value not on list !!!")
+##  print("  !!! Please change value !!!\n")
 ##-EOF-##
